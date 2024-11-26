@@ -37,6 +37,7 @@ class _LoginPageState extends State<LoginPage> {
   Future<void> login() async {
     debugPrint(
         "email = ${_emailController.text}, password = ${_passwordController.text}");
+    Navigator.of(context).pushNamed(AppRoutes.home);
     // if (_formKey.currentState!.validate()) {
     //   BlocProvider.of<AuthCubit>(context)
     //       .login(_emailController.text, _passwordController.text);
@@ -78,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Form(
                   key: _formKey,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Align(
                         alignment: Alignment.topCenter,
@@ -98,7 +99,7 @@ class _LoginPageState extends State<LoginPage> {
                             .textTheme
                             .headlineMedium!
                             .copyWith(
-                              color: AppColor.orange8,
+                              color: AppColor.blue,
                             ),
                       ),
                       const SizedBox(height: 8.0),
@@ -131,7 +132,7 @@ class _LoginPageState extends State<LoginPage> {
                         textInputAction: TextInputAction.next,
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return "قم بإدخال البريد الإلكتروني الخاص بك.";
+                            return "قم بإدخال البريد الإلكتروني الخاص بك";
                           } else {
                             // Improved regular expression for validating email
                             String emailPattern =
@@ -156,7 +157,7 @@ class _LoginPageState extends State<LoginPage> {
                           }
                         },
                         decoration: const InputDecoration(
-                          hintText: 'قم بإدخال البريد الإلكتروني الخاص بك.',
+                          hintText: 'قم بإدخال البريد الإلكتروني الخاص بك',
                           prefixIcon: Icon(Icons.email_outlined),
                           prefixIconColor: AppColor.grey,
                         ),
@@ -171,6 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       const SizedBox(height: 12.0),
                       TextFormField(
+                        textAlign: TextAlign.right,
                         controller: _passwordController,
                         focusNode: _passwordFocusNode,
                         obscureText: !visibility,
@@ -223,7 +225,7 @@ class _LoginPageState extends State<LoginPage> {
                                 .textTheme
                                 .titleMedium!
                                 .copyWith(
-                                  color: AppColor.orange8,
+                                  color: AppColor.blue,
                                   fontWeight: FontWeight.bold,
                                 ),
                           ),
@@ -242,7 +244,7 @@ class _LoginPageState extends State<LoginPage> {
                               return ElevatedButton(
                                   onPressed: null,
                                   style: ElevatedButton.styleFrom(
-                                      backgroundColor: AppColor.orange8,
+                                      backgroundColor: AppColor.blue,
                                       foregroundColor: AppColor.white),
                                   child: const Center(
                                     child: CircularProgressIndicator.adaptive(),
@@ -251,7 +253,7 @@ class _LoginPageState extends State<LoginPage> {
                               return ElevatedButton(
                                 onPressed: login,
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: AppColor.orange8,
+                                    backgroundColor: AppColor.blue,
                                     foregroundColor: AppColor.white),
                                 child: Text(
                                   'تسجيل الدخول',
@@ -283,14 +285,14 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           TextButton(
                             onPressed: () => Navigator.of(context)
-                                .pushNamed(AppRoutes.roleSelectionPage),
+                                .pushNamed(AppRoutes.registerPage),
                             child: Text(
                               'إنشاء حساب',
                               style: Theme.of(context)
                                   .textTheme
                                   .titleMedium!
                                   .copyWith(
-                                    color: AppColor.orange8,
+                                    color: AppColor.blue,
                                     fontWeight: FontWeight.bold,
                                   ),
                             ),

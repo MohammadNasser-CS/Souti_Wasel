@@ -9,47 +9,50 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Souti Wasel',
       debugShowCheckedModeBanner: false,
+
+      // Application Theme
       theme: ThemeData(
         primaryColor: AppColor.white,
         scaffoldBackgroundColor: AppColor.grey1,
-        appBarTheme: const AppBarTheme(backgroundColor: AppColor.white),
+        appBarTheme: const AppBarTheme(
+            backgroundColor: AppColor.white, scrolledUnderElevation: 0),
         useMaterial3: true,
-        inputDecorationTheme: InputDecorationTheme(
-          fillColor: AppColor.white,
-          filled: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide(color: AppColor.grey4),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide(color: AppColor.grey4),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide(color: AppColor.grey4),
-          ),
-          disabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide(color: AppColor.grey4),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: const BorderSide(color: AppColor.red),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: const BorderSide(color: AppColor.red),
-          ),
-        ),
+        inputDecorationTheme: _buildInputDecorationTheme(),
       ),
-      initialRoute: AppRoutes.loginPage,
+
+      // Initial Route
+      initialRoute: AppRoutes.splash,
+
+      // Route Generator
       onGenerateRoute: AppRouter.generateRoute,
+    );
+  }
+
+  /// Builds the InputDecoration theme to keep the code cleaner and reusable.
+  InputDecorationTheme _buildInputDecorationTheme() {
+    return InputDecorationTheme(
+      fillColor: AppColor.white,
+      filled: true,
+      border: _buildOutlineInputBorder(AppColor.grey4),
+      enabledBorder: _buildOutlineInputBorder(AppColor.grey4),
+      focusedBorder: _buildOutlineInputBorder(AppColor.grey4),
+      disabledBorder: _buildOutlineInputBorder(AppColor.grey4),
+      errorBorder: _buildOutlineInputBorder(AppColor.red),
+      focusedErrorBorder: _buildOutlineInputBorder(AppColor.red),
+    );
+  }
+
+  /// Reusable method for creating consistent border styles.
+  OutlineInputBorder _buildOutlineInputBorder(Color color) {
+    return OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8.0),
+      borderSide: BorderSide(color: color),
     );
   }
 }

@@ -27,7 +27,9 @@ class _LettersSectionState extends State<LettersSection> {
               physics: const NeverScrollableScrollPhysics(),
               shrinkWrap: true,
               itemBuilder: (context, index) => InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      debugPrint("test");
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: AppColor.grey1,
@@ -41,7 +43,7 @@ class _LettersSectionState extends State<LettersSection> {
                               letterList[index], // Arabic letter
                               style: TextStyle(
                                 fontSize: size.height *
-                                    0.15, // Adjust font size as needed
+                                    0.1, // Adjust font size as needed
                                 fontWeight: FontWeight.bold,
                                 color: AppColor.blue,
                               ),
@@ -49,16 +51,19 @@ class _LettersSectionState extends State<LettersSection> {
                             ),
                           ),
                           PositionedDirectional(
-                            top: 0,
-                            end: 0,
+                            bottom: 0,
+                            start: 0,
                             child: IconButton(
                               onPressed: () {},
-                              icon: const Icon(Icons.favorite_border_outlined
-                                  // filterdProducts[index].isFavorite == false
-                                  //     ? Icons.favorite_border_outlined
-                                  //     : Icons.favorite,
-                                  // color: Colors.deepOrange,
-                                  ),
+                              icon: Icon(
+                                Icons.navigate_before_outlined,
+                                color: AppColor.blue,
+                                size: size.height * 0.05,
+                                // filterdProducts[index].isFavorite == false
+                                //     ? Icons.check_box_outlined
+                                //     : Icons.favorite,
+                                // color: Colors.deepOrange,
+                              ),
                             ),
                           ),
                         ],

@@ -14,9 +14,25 @@ dependencies:
   persistent_bottom_nav_bar_v2: ^5.3.1
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.14.1
   flutter_lints: ^4.0.0
+  flutter_native_splash: ^2.4.3
   flutter_test:
     sdk: flutter
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon_logo.png"
+  adaptive_icon:
+    android: true
+    ios: true
+
+# flutter_native_splash:
+#   color: "#FFFFFF" # Background color for the splash screen
+#   image: assets/images/souti_wasel_logo.png # Path to your splash image
+#   android: true
+#   ios: true
 
 flutter:
   uses-material-design: true

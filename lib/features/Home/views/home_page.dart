@@ -22,8 +22,9 @@ class _UserHomePageState extends State<UserHomePage> {
       ),
       child: Column(
         children: [
+          // CategorySlider(),
+          // SizedBox(height: 8.0),
           HomePageHeader(),
-          SizedBox(height: 8.0),
           SizedBox(height: 8.0),
           Expanded(child: LettersSection()),
         ],

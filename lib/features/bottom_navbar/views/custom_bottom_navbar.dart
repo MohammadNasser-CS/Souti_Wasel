@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
 import 'package:soute_wasel/core/Utils/app_color.dart';
-import 'package:soute_wasel/features/Favorite/views/favorite_page.dart';
 import 'package:soute_wasel/features/Home/views/home_page.dart';
 import 'package:soute_wasel/features/Profile/views/profile_page.dart';
 import 'package:soute_wasel/features/bottom_navbar/views/widgets/app_bar_title_for_user.dart';
@@ -48,26 +47,26 @@ class _CustomBottomNavbarState extends State<CustomBottomNavbar> {
         item: ItemConfig(
           icon: const Icon(Icons.home_outlined),
           title: "الرئيسية",
-          activeForegroundColor: AppColor.orange8,
-          inactiveForegroundColor: AppColor.grey6,
+          activeForegroundColor: AppColor.blue,
+          inactiveForegroundColor: AppColor.grey,
         ),
       ),
-      PersistentTabConfig(
-        screen: const FavoritePage(),
-        item: ItemConfig(
-          icon: const Icon(Icons.favorite_border),
-          title: "المفضلة",
-          activeForegroundColor: AppColor.orange8,
-          inactiveForegroundColor: AppColor.grey6,
-        ),
-      ),
+      // PersistentTabConfig(
+      //   screen: const FavoritePage(),
+      //   item: ItemConfig(
+      //     icon: const Icon(Icons.favorite_border),
+      //     title: "المفضلة",
+      //     activeForegroundColor: AppColor.blue,
+      //     inactiveForegroundColor: AppColor.grey,
+      //   ),
+      // ),
       PersistentTabConfig(
         screen: const ProfilePage(),
         item: ItemConfig(
           icon: const Icon(Icons.person_outline),
           title: "حسابي",
-          activeForegroundColor: AppColor.orange8,
-          inactiveForegroundColor: AppColor.grey6,
+          activeForegroundColor: AppColor.blue,
+          inactiveForegroundColor: AppColor.grey,
         ),
       ),
     ];
@@ -81,18 +80,22 @@ class _CustomBottomNavbarState extends State<CustomBottomNavbar> {
         toolbarHeight: size.height * 0.1,
         backgroundColor: Theme.of(context).primaryColor,
         centerTitle: true,
-        leading: const ClipRRect(
+        leading: ClipRRect(
           child: Padding(
-              padding: EdgeInsetsDirectional.all(2.0),
-              child: Icon(Icons.volume_off_outlined)),
+            padding: const EdgeInsets.all(2.0),
+            child: Image.asset(
+              'assets/images/souti_wasel_logo.png',
+              fit: BoxFit.contain,
+            ),
+          ),
         ),
         title: AppBarTitleForUser(index: _controller.index),
       ),
       body: PersistentTabView(
         margin: EdgeInsets.only(top: size.height * 0.02),
-        backgroundColor: AppColor.white,
+        backgroundColor: Theme.of(context).primaryColor,
         controller: _controller,
-        navBarBuilder: (navBarConfig) => Style1BottomNavBar(
+        navBarBuilder: (navBarConfig) => Style6BottomNavBar(
           navBarConfig: navBarConfig,
           navBarDecoration:
               NavBarDecoration(color: Theme.of(context).primaryColor),

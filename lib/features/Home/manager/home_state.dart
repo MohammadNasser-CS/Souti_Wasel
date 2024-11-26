@@ -14,3 +14,11 @@ final class HomeError extends HomeState {
     required this.message,
   });
 }
+final class HomePageCategoryChanged extends HomeState{
+  final int ?selectedCategoryIndex;
+   HomePageCategoryChanged({this.selectedCategoryIndex});
+}
+final class FavroiteChangedSuccess extends HomeState {
+  final String message;
+   FavroiteChangedSuccess({required this.message});
+}
