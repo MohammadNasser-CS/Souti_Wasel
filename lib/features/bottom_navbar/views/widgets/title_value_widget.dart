@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soute_wasel/Utils/app_color.dart';
+import 'package:soute_wasel/core/Utils/app_color.dart';
 
 class TitleValueWidget extends StatelessWidget {
   final String text;

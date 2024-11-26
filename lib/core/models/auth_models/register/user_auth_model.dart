@@ -1,24 +1,24 @@
 import 'dart:convert';
 
-class StudentRegisterModel {
+class UserRegisterModel {
   final String firstName;
   final String lastName;
   final String email;
   final String password;
-  StudentRegisterModel({
+  UserRegisterModel({
     required this.firstName,
     required this.lastName,
     required this.email,
     required this.password,
   });
 
-  StudentRegisterModel copyWith({
+  UserRegisterModel copyWith({
     String? firstName,
     String? lastName,
     String? email,
     String? password,
   }) {
-    return StudentRegisterModel(
+    return UserRegisterModel(
       firstName: firstName ?? this.firstName,
       email: email ?? this.email,
       password: password ?? this.password,
@@ -35,8 +35,8 @@ class StudentRegisterModel {
     return result;
   }
 
-  factory StudentRegisterModel.fromMap(Map<String, dynamic> map) {
-    return StudentRegisterModel(
+  factory UserRegisterModel.fromMap(Map<String, dynamic> map) {
+    return UserRegisterModel(
       firstName: map['firstName'] ?? '',
       email: map['email'] ?? '',
       password: map['password'] ?? '',
@@ -46,19 +46,19 @@ class StudentRegisterModel {
 
   String toJson() => json.encode(toMap());
 
-  factory StudentRegisterModel.fromJson(String source) =>
-      StudentRegisterModel.fromMap(json.decode(source));
+  factory UserRegisterModel.fromJson(String source) =>
+      UserRegisterModel.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'StudentRegisterModel(firstName: $firstName, lastName: $lastName, email: $email, password: $password,)';
+    return 'UserRegisterModel(firstName: $firstName, lastName: $lastName, email: $email, password: $password,)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is StudentRegisterModel &&
+    return other is UserRegisterModel &&
         other.firstName == firstName &&
         other.email == email &&
         other.password == password &&

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-class OwnerRegisterModel {
+class AdminRegisterModel {
   final String name;
   final String email;
   final String password;
@@ -9,7 +9,7 @@ class OwnerRegisterModel {
   final String role;
   final String? base64Image;
   final String? imageExtension;
-  OwnerRegisterModel({
+  AdminRegisterModel({
     required this.name,
     required this.email,
     required this.password,
@@ -20,7 +20,7 @@ class OwnerRegisterModel {
     this.imageExtension,
   });
 
-  OwnerRegisterModel copyWith({
+  AdminRegisterModel copyWith({
     String? name,
     String? email,
     String? password,
@@ -30,7 +30,7 @@ class OwnerRegisterModel {
     String? base64Image,
     String? imageExtension,
   }) {
-    return OwnerRegisterModel(
+    return AdminRegisterModel(
       name: name ?? this.name,
       email: email ?? this.email,
       password: password ?? this.password,
@@ -44,25 +44,25 @@ class OwnerRegisterModel {
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{};
-  
+
     result.addAll({'name': name});
     result.addAll({'email': email});
     result.addAll({'password': password});
     result.addAll({'phoneNumber': phoneNumber});
     result.addAll({'gender': gender});
     result.addAll({'role': role});
-    if(base64Image != null){
+    if (base64Image != null) {
       result.addAll({'base64Image': base64Image});
     }
-    if(imageExtension != null){
+    if (imageExtension != null) {
       result.addAll({'imageExtension': imageExtension});
     }
-  
+
     return result;
   }
 
-  factory OwnerRegisterModel.fromMap(Map<String, dynamic> map) {
-    return OwnerRegisterModel(
+  factory AdminRegisterModel.fromMap(Map<String, dynamic> map) {
+    return AdminRegisterModel(
       name: map['name'] ?? '',
       email: map['email'] ?? '',
       password: map['password'] ?? '',
@@ -76,37 +76,38 @@ class OwnerRegisterModel {
 
   String toJson() => json.encode(toMap());
 
-  factory OwnerRegisterModel.fromJson(String source) => OwnerRegisterModel.fromMap(json.decode(source));
+  factory AdminRegisterModel.fromJson(String source) =>
+      AdminRegisterModel.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'OwnerRegisterModel(name: $name, email: $email, password: $password, phoneNumber: $phoneNumber, gender: $gender, role: $role, base64Image: $base64Image, imageExtension: $imageExtension)';
+    return 'AdminRegisterModel(name: $name, email: $email, password: $password, phoneNumber: $phoneNumber, gender: $gender, role: $role, base64Image: $base64Image, imageExtension: $imageExtension)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
-    return other is OwnerRegisterModel &&
-      other.name == name &&
-      other.email == email &&
-      other.password == password &&
-      other.phoneNumber == phoneNumber &&
-      other.gender == gender &&
-      other.role == role &&
-      other.base64Image == base64Image &&
-      other.imageExtension == imageExtension;
+
+    return other is AdminRegisterModel &&
+        other.name == name &&
+        other.email == email &&
+        other.password == password &&
+        other.phoneNumber == phoneNumber &&
+        other.gender == gender &&
+        other.role == role &&
+        other.base64Image == base64Image &&
+        other.imageExtension == imageExtension;
   }
 
   @override
   int get hashCode {
     return name.hashCode ^
-      email.hashCode ^
-      password.hashCode ^
-      phoneNumber.hashCode ^
-      gender.hashCode ^
-      role.hashCode ^
-      base64Image.hashCode ^
-      imageExtension.hashCode;
+        email.hashCode ^
+        password.hashCode ^
+        phoneNumber.hashCode ^
+        gender.hashCode ^
+        role.hashCode ^
+        base64Image.hashCode ^
+        imageExtension.hashCode;
   }
 }

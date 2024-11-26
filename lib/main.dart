@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:soute_wasel/Utils/app_color.dart';
-import 'package:soute_wasel/Utils/routes/app_router.dart';
-import 'package:soute_wasel/Utils/routes/app_routes.dart';
+import 'package:soute_wasel/core/Utils/app_color.dart';
+import 'package:soute_wasel/core/Utils/routes/app_router.dart';
+import 'package:soute_wasel/core/Utils/routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Housing System',
+      title: 'Souti Wasel',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: AppColor.white,
@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      initialRoute: AppRoutes.home,
+      initialRoute: AppRoutes.loginPage,
       onGenerateRoute: AppRouter.generateRoute,
     );
   }

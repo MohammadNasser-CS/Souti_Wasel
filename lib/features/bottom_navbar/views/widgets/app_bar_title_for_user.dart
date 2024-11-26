@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:soute_wasel/Views/bottom_navbar/widgets/title_value_widget.dart';
+import 'package:soute_wasel/features/bottom_navbar/views/widgets/title_value_widget.dart';
 
 class AppBarTitleForUser extends StatelessWidget {
   final int index;

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent_bottom_nav_bar_v2.dart';
-import 'package:soute_wasel/Utils/app_color.dart';
-import 'package:soute_wasel/Views/Favorite/favorite_page.dart';
-import 'package:soute_wasel/Views/Home/home_page.dart';
-import 'package:soute_wasel/Views/Profile/profile_page.dart';
-import 'package:soute_wasel/Views/bottom_navbar/widgets/app_bar_title_for_user.dart';
-import 'package:soute_wasel/models/user_model.dart';
+import 'package:soute_wasel/core/Utils/app_color.dart';
+import 'package:soute_wasel/features/Favorite/views/favorite_page.dart';
+import 'package:soute_wasel/features/Home/views/home_page.dart';
+import 'package:soute_wasel/features/Profile/views/profile_page.dart';
+import 'package:soute_wasel/features/bottom_navbar/views/widgets/app_bar_title_for_user.dart';
+import 'package:soute_wasel/core/models/user_model.dart';
 
 class CustomBottomNavbar extends StatefulWidget {
   final UserModel user;

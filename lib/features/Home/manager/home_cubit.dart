@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:soute_wasel/Utils/auth_exceptions.dart';
+import 'package:soute_wasel/core/Utils/auth_exceptions.dart';
 
 part 'home_state.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:soute_wasel/Views/Home/widgets/home_page_header.dart';
-import 'package:soute_wasel/Views/Home/widgets/letters_section.dart';
-import 'package:soute_wasel/models/user_model.dart';
+import 'package:soute_wasel/features/Home/views/widgets/home_page_header.dart';
+import 'package:soute_wasel/features/Home/views/widgets/letters_section.dart';
+import 'package:soute_wasel/core/models/user_model.dart';
 
 class UserHomePage extends StatefulWidget {
   final UserModel user;

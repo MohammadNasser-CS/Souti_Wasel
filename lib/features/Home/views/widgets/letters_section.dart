@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:soute_wasel/Utils/app_color.dart';
-import 'package:soute_wasel/Utils/letter_list.dart';
+import 'package:soute_wasel/core/Utils/app_color.dart';
+import 'package:soute_wasel/core/Utils/letter_list.dart';
 
 class LettersSection extends StatefulWidget {
   const LettersSection({super.key});
